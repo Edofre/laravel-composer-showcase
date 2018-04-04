@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
         // Register some service providers we only need for dev environments
         if ($this->app->environment() !== 'production') {
             $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
     }
 }
