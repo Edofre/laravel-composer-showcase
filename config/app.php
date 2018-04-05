@@ -150,6 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Edofre\Fullcalendar\FullcalendarServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -209,6 +210,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+
+        // Package aliases
+        'Fullcalendar' => Edofre\Fullcalendar\Facades\Fullcalendar::class,
     ],
 
 ];
