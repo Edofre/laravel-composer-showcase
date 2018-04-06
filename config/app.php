@@ -151,6 +151,7 @@ return [
          * Package Service Providers...
          */
         Edofre\Fullcalendar\FullcalendarServiceProvider::class,
+        Edofre\FullcalendarScheduler\FullcalendarSchedulerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -213,6 +214,7 @@ return [
 
         // Package aliases
         'Fullcalendar' => Edofre\Fullcalendar\Facades\Fullcalendar::class,
+        'FullcalendarScheduler' => Edofre\FullcalendarScheduler\Facades\FullcalendarScheduler::class,
     ],
 
 ];
