@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('fullcalendar', 'Fullcalendar@index')
+    ->name('fullcalendar.index');
+
+Route::get('fullcalendar-scheduler', 'FullcalendarScheduler@index')
+    ->name('fullcalendar-scheduler.index');
