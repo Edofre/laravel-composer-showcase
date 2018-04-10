@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('fullcalendar', 'Fullcalendar@index')
+Route::get('fullcalendar', 'FullcalendarController@index')
     ->name('fullcalendar.index');
 
-Route::get('fullcalendar-scheduler', 'FullcalendarScheduler@index')
+Route::get('fullcalendar-scheduler', 'FullcalendarSchedulerController@index')
     ->name('fullcalendar-scheduler.index');
