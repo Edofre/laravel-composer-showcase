@@ -21,3 +21,6 @@ Route::get('fullcalendar', 'FullcalendarController@index')
 
 Route::get('fullcalendar-scheduler', 'FullcalendarSchedulerController@index')
     ->name('fullcalendar-scheduler.index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
