@@ -13913,7 +13913,6 @@ window.Popper = __webpack_require__(3).default;
 
 try {
   window.$ = window.jQuery = __webpack_require__(4);
-
   __webpack_require__(16);
 } catch (e) {}
 
@@ -13924,7 +13923,6 @@ try {
  */
 
 window.axios = __webpack_require__(17);
-
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -13934,7 +13932,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 var token = document.head.querySelector('meta[name="csrf-token"]');
-
 if (token) {
   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {

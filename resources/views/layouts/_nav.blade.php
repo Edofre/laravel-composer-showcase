@@ -17,8 +17,8 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('auth.login') }}</a></li>
-                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('auth.register') }}</a></li>
+                    {{--<li><a class="nav-link" href="{{ route('login') }}">{{ __('auth.login') }}</a></li>--}}
+                    {{--<li><a class="nav-link" href="{{ route('register') }}">{{ __('auth.register') }}</a></li>--}}
                 @endguest
             </ul>
         </div>

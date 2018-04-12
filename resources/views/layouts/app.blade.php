@@ -13,6 +13,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- View defined styles -->
     @stack('styles')
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    {!! \Edofre\FullcalendarScheduler\FullcalendarScheduler::renderScriptFiles() !!}
 </head>
 <body>
 <div id="app">
@@ -23,16 +26,17 @@
             @include('flash::message')
         </div>
 
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </main>
 </div>
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-<script>
+<script type="text/javascript">
     $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
 </script>
 <!-- Custom scripts -->
 @stack('scripts')
+
 </body>
 </html>
