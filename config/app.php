@@ -154,6 +154,11 @@ return [
         Edofre\FullcalendarScheduler\FullcalendarSchedulerServiceProvider::class,
 
         /*
+         * Community Package Service Providers
+         */
+//        Laracasts\Flash\FlashServiceProvider::class,
+//
+        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,

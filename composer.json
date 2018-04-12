@@ -9,6 +9,7 @@
         "edofre/laravel-fullcalendar": "^1.2",
         "edofre/laravel-fullcalendar-scheduler": "^1.2.3",
         "fideloper/proxy": "^4.0",
+        "laracasts/flash": "^3.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0"
     },
