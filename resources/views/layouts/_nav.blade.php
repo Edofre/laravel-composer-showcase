@@ -17,6 +17,8 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
+                    <li><a href="{{ route('fullcalendar.index') }}" class="nav-link">Fullcalendar</a></li>
+                    <li><a href="{{ route('fullcalendar-scheduler.index') }}" class="nav-link">Scheduler</a></li>
                     {{--<li><a class="nav-link" href="{{ route('login') }}">{{ __('auth.login') }}</a></li>--}}
                     {{--<li><a class="nav-link" href="{{ route('register') }}">{{ __('auth.register') }}</a></li>--}}
                 @endguest
