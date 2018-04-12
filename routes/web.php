@@ -18,6 +18,9 @@ Route::get('/', function () {
 
 Route::get('fullcalendar', 'FullcalendarController@index')
     ->name('fullcalendar.index');
+Route::get('fullcalendar/ajax/events', 'FullcalendarController@ajaxEvents')
+    ->name('fullcalendar.ajax.events');
+
 
 Route::get('fullcalendar-scheduler', 'FullcalendarSchedulerController@index')
     ->name('fullcalendar-scheduler.index');
