@@ -27,17 +27,18 @@ class FullcalendarController extends Controller
 
         // Set options
         $calendar->setOptions([
+            'now'         => '2016-11-14',
             'locale'      => 'nl',
             'weekNumbers' => true,
             'selectable'  => true,
             'defaultView' => 'agendaWeek',
             // Add the callbacks
-            'eventClick' => new \Edofre\Fullcalendar\JsExpression("
+            'eventClick'  => new \Edofre\Fullcalendar\JsExpression("
                 function(event, jsEvent, view) {
                     console.log(event);
                 }
             "),
-            'viewRender' => new \Edofre\Fullcalendar\JsExpression("
+            'viewRender'  => new \Edofre\Fullcalendar\JsExpression("
                 function( view, element ) {
                     console.log(\"View \"+view.name+\" rendered\");
                 }
@@ -50,18 +51,6 @@ class FullcalendarController extends Controller
         return view('fullcalendar.index', [
             'calendar' => $calendar,
         ]);
-    }
-
-    /**
-     * @param Request $request
-     * @return string
-     */
-    public function ajaxEvents(Request $request)
-    {
-        // start and end dates will be sent automatically by fullcalendar, they can be obtained using:
-        // $request->get('start') & $request->get('end')
-        $events = $this->getEvents();
-        return json_encode($events);
     }
 
     /**
@@ -108,5 +97,17 @@ class FullcalendarController extends Controller
             'textColor'        => 'green',
         ]);
         return $events;
+    }
+
+    /**
+     * @param Request $request
+     * @return string
+     */
+    public function ajaxEvents(Request $request)
+    {
+        // start and end dates will be sent automatically by fullcalendar, they can be obtained using:
+        // $request->get('start') & $request->get('end')
+        $events = $this->getEvents();
+        return json_encode($events);
     }
 }
