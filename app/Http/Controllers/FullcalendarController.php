@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Edofre\Fullcalendar\Event;
+use Edofre\Fullcalendar\Fullcalendar;
+use Edofre\Fullcalendar\JsExpression;
 use Illuminate\Http\Request;
 
 /**
@@ -17,7 +20,7 @@ class FullcalendarController extends Controller
     public function index()
     {
         // Generate a new fullcalendar instance
-        $calendar = new \Edofre\Fullcalendar\Fullcalendar();
+        $calendar = new Fullcalendar();
 
         // You can manually add the objects as an array
         $events = $this->getEvents();
@@ -33,12 +36,12 @@ class FullcalendarController extends Controller
             'selectable'  => true,
             'defaultView' => 'agendaWeek',
             // Add the callbacks
-            'eventClick'  => new \Edofre\Fullcalendar\JsExpression("
+            'eventClick'  => new JsExpression("
                 function(event, jsEvent, view) {
                     console.log(event);
                 }
             "),
-            'viewRender'  => new \Edofre\Fullcalendar\JsExpression("
+            'viewRender'  => new JsExpression("
                 function( view, element ) {
                     console.log(\"View \"+view.name+\" rendered\");
                 }
@@ -59,7 +62,7 @@ class FullcalendarController extends Controller
     private function getEvents()
     {
         $events = [];
-        $events[] = new \Edofre\Fullcalendar\Event([
+        $events[] = new Event([
             'id'     => 0,
             'title'  => 'Rest',
             'allDay' => true,
@@ -67,14 +70,14 @@ class FullcalendarController extends Controller
             'end'    => Carbon::create(2016, 11, 20),
         ]);
 
-        $events[] = new \Edofre\Fullcalendar\Event([
+        $events[] = new Event([
             'id'    => 1,
             'title' => 'Appointment #' . rand(1, 999),
             'start' => Carbon::create(2016, 11, 15, 13),
             'end'   => Carbon::create(2016, 11, 15, 13)->addHour(2),
         ]);
 
-        $events[] = new \Edofre\Fullcalendar\Event([
+        $events[] = new Event([
             'id'               => 2,
             'title'            => 'Appointment #' . rand(1, 999),
             'editable'         => true,
@@ -84,7 +87,7 @@ class FullcalendarController extends Controller
             'end'              => Carbon::create(2016, 11, 16, 13),
         ]);
 
-        $events[] = new \Edofre\Fullcalendar\Event([
+        $events[] = new Event([
             'id'               => 3,
             'title'            => 'Appointment #' . rand(1, 999),
             'editable'         => true,

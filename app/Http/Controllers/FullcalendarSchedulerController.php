@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Edofre\FullcalendarScheduler\FullcalendarScheduler;
+use Edofre\FullcalendarScheduler\JsExpression;
+
 /**
  * Class FullcalendarSchedulerController
  * @package App\Http\Controllers
@@ -14,7 +17,7 @@ class FullcalendarSchedulerController extends Controller
     public function index()
     {
         // Generate a new fullcalendar instance
-        $calendar = new \Edofre\FullcalendarScheduler\FullcalendarScheduler();
+        $calendar = new FullcalendarScheduler();
 
         // Set events and resources, commented lines shows how to add them via ajax
         // $calendar->setEvents(route('fullcalendar-scheduler-ajax-events'));
@@ -79,12 +82,12 @@ class FullcalendarSchedulerController extends Controller
                 ],
             ],
             'resourceLabelText' => 'Rooms',
-            'eventClick' => new \Edofre\FullcalendarScheduler\JsExpression("
+            'eventClick'        => new JsExpression("
                     function(event, jsEvent, view) {
                         console.log(event);
                     }
                 "),
-            'viewRender' => new \Edofre\FullcalendarScheduler\JsExpression("
+            'viewRender'        => new JsExpression("
                     function( view, element ) {
                         console.log(\"View \"+view.name+\" rendered\");
                     }
